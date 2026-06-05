@@ -530,10 +530,9 @@ ul { list-style: none; }
   opacity: 0;
   will-change: opacity, transform;
   justify-content: center;
+  padding-top: 88px; /* compensa navbar fija para centrar en área visible */
 }
 #heroSlide1 { will-change: transform; }
-
-/* Slide 2 content — sin padding extra, el flex centering es suficiente */
 
 /* Título slide 2 */
 #heroSlide2 .hero-slide__title {
@@ -553,8 +552,8 @@ ul { list-style: none; }
 }
 
 @media (max-width: 768px) {
-  #heroSlide2 { justify-content: flex-end; }
-  #heroSlide2 .hero-slide__content { padding-top: 0; padding-bottom: 10vh; }
+  #heroSlide2 { justify-content: flex-end; padding-top: 0; }
+  #heroSlide2 .hero-slide__content { padding-bottom: 10vh; }
   #heroSlide2 .hero-slide__title { font-size: clamp(2rem, 8vw, 3rem); white-space: normal; }
   #heroSlide2 .hero-brand-logo { width: 160px; margin-top: 16px; }
 }
