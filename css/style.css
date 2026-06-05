@@ -530,8 +530,31 @@ ul { list-style: none; }
 }
 
 /* Slide 2 — JS controla opacity en scroll */
-#heroSlide2 { opacity: 0; will-change: opacity, transform; }
+#heroSlide2 {
+  opacity: 0;
+  will-change: opacity, transform;
+  justify-content: flex-end; /* empuja el contenido hacia abajo */
+  padding-bottom: 12vh;
+}
 #heroSlide1 { will-change: transform; }
+
+/* Título más grande en slide 2 */
+#heroSlide2 .hero-slide__title {
+  font-size: clamp(3rem, 7vw, 6rem);
+  margin-bottom: 20px;
+}
+
+/* Logo más grande en slide 2 */
+#heroSlide2 .hero-brand-logo {
+  width: 260px;
+  margin-top: 28px;
+}
+
+@media (max-width: 768px) {
+  #heroSlide2 { padding-bottom: 10vh; }
+  #heroSlide2 .hero-slide__title { font-size: clamp(2.4rem, 9vw, 3.6rem); }
+  #heroSlide2 .hero-brand-logo { width: 180px; margin-top: 20px; }
+}
 
 /* --- Scroll hint (slide 1) --- */
 .hero-slide__scroll-hint {
