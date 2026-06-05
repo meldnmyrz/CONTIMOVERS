@@ -362,9 +362,9 @@ ul { list-style: none; }
   #heroSlide2 .hero-slide__overlay--dark {
     background: linear-gradient(
       180deg,
-      rgba(10,31,58,.85) 0%,
-      rgba(13,59,124,.55) 40%,
-      rgba(10,31,58,.90) 100%
+      rgba(5,12,28,.95) 0%,
+      rgba(10,31,58,.80) 40%,
+      rgba(5,12,28,.95) 100%
     );
   }
 }
