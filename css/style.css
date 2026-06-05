@@ -626,6 +626,31 @@ ul { list-style: none; }
   .hero-slide__eyebrow { font-size: .68rem; margin-bottom: 12px; }
 }
 
+/* --- Animación entrada slide 1 --- */
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-anim {
+  opacity: 0;
+  animation: heroFadeUp .9s cubic-bezier(.22,.68,0,1.2) forwards;
+}
+.hero-anim--1 { animation-delay: .25s; }
+.hero-anim--2 { animation-delay: .55s; }
+.hero-anim--3 { animation-delay: .80s; }
+
+/* Reducir movimiento si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  .hero-anim { animation: none; opacity: 1; }
+}
+
 /* --- Scroll hint (slide 1) --- */
 .hero-slide__scroll-hint {
   position: absolute;
