@@ -394,25 +394,14 @@ ul { list-style: none; }
     rgba(4,12,28,.72) 100%
   );
 }
+/* Slide 2 — degradado azul marino oscuro en desktop y móvil */
 .hero-slide__overlay--dark {
   background: linear-gradient(
     180deg,
-    rgba(4,12,28,.72) 0%,
-    rgba(4,12,28,.32) 45%,
-    rgba(4,12,28,.75) 100%
+    rgba(5,12,28,.92) 0%,
+    rgba(10,31,58,.78) 40%,
+    rgba(5,12,28,.92) 100%
   );
-}
-
-/* Degradado azul marino más fuerte en móvil para legibilidad del texto */
-@media (max-width: 768px) {
-  #heroSlide2 .hero-slide__overlay--dark {
-    background: linear-gradient(
-      180deg,
-      rgba(5,12,28,.95) 0%,
-      rgba(10,31,58,.80) 40%,
-      rgba(5,12,28,.95) 100%
-    );
-  }
 }
 
 /* --- Contenido central --- */
@@ -544,10 +533,7 @@ ul { list-style: none; }
 }
 #heroSlide1 { will-change: transform; }
 
-/* Slide 2 content — padding-top para compensar navbar fija */
-#heroSlide2 .hero-slide__content {
-  padding-top: 72px;
-}
+/* Slide 2 content — sin padding extra, el flex centering es suficiente */
 
 /* Título slide 2 */
 #heroSlide2 .hero-slide__title {
