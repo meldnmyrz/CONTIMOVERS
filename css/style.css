@@ -1408,16 +1408,26 @@ ul { list-style: none; }
   /* Mostrar CTA dentro del nav en móvil */
   .navbar__nav .btn { display: flex; }
 
-  /* Links del menú */
-  .nav-link {
+  /* Links del menú — forzar blanco siempre, incluso en navbar.scrolled */
+  .nav-link,
+  .navbar.scrolled .nav-link,
+  .navbar.menu-open .nav-link,
+  .navbar.menu-open.scrolled .nav-link {
     font-size: 1.15rem;
-    color: var(--white);
+    color: rgba(255,255,255,.9) !important;
     padding: 13px 0;
     width: 100%;
     border-bottom: 1px solid rgba(255,255,255,.07);
+    background: transparent !important;
   }
   .nav-link:last-child { border-bottom: none; }
-  .nav-link svg { display: none; } /* ocultar chevron en móvil */
+  .nav-link svg { display: none; }
+  /* Active en mobile: solo color verde, sin caja */
+  .nav-link.active,
+  .navbar.menu-open .nav-link.active {
+    color: var(--emerald) !important;
+    background: transparent !important;
+  }
 
   /* Dropdowns — colapsados por defecto en móvil */
   .dropdown-menu {
@@ -1457,15 +1467,15 @@ ul { list-style: none; }
     cursor: pointer;
   }
   .nav-dropdown-toggle .toggle-arrow {
-    width: 28px; height: 28px;
-    background: rgba(255,255,255,.08);
-    border-radius: 6px;
+    width: 32px; height: 32px;
+    background: transparent;
+    border: none;
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
-    transition: transform .3s ease, background .2s;
+    transition: transform .3s ease;
   }
-  .nav-dropdown.is-open .toggle-arrow { transform: rotate(180deg); background: rgba(0,168,107,.2); }
-  .toggle-arrow svg { width: 14px; height: 14px; color: rgba(255,255,255,.7); }
+  .nav-dropdown.is-open .toggle-arrow { transform: rotate(180deg); }
+  .toggle-arrow svg { width: 16px; height: 16px; color: rgba(255,255,255,.7); }
 
   /* Burger button */
   .navbar__burger {
