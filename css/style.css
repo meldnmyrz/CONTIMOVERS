@@ -1478,6 +1478,13 @@ ul { list-style: none; }
   .toggle-arrow svg { width: 16px; height: 16px; color: rgba(255,255,255,.7); }
 
   /* Burger button */
+  /* Navbar inner: logo izquierda, burger derecha */
+  .navbar__inner {
+    justify-content: space-between;
+  }
+  .navbar__actions {
+    margin-left: auto;
+  }
   .navbar__burger {
     display: flex;
     z-index: 1100;
