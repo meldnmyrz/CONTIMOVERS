@@ -7,29 +7,56 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 // --- Mobile burger menu ---
-const burger = document.getElementById('burger');
+const navbar  = document.getElementById('navbar');
+const burger  = document.getElementById('burger');
 const navMenu = document.getElementById('navMenu');
 
 function closeMenu() {
   navMenu?.classList.remove('open');
   burger?.classList.remove('is-open');
+  navbar?.classList.remove('menu-open');
   document.body.style.overflow = '';
 }
 
 burger?.addEventListener('click', () => {
   const isOpen = navMenu.classList.toggle('open');
   burger.classList.toggle('is-open', isOpen);
+  navbar.classList.toggle('menu-open', isOpen);
   document.body.style.overflow = isOpen ? 'hidden' : '';
 });
 
-// Cerrar al hacer click en un enlace del menú
-navMenu?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+// --- Dropdown toggle en móvil ---
+navMenu?.querySelectorAll('[data-toggle="dropdown"]').forEach(toggle => {
+  toggle.addEventListener('click', (e) => {
+    // Solo en móvil
+    if (window.innerWidth > 768) return;
+    const dropdown = toggle.closest('.nav-dropdown');
+    const isOpen = dropdown.classList.toggle('is-open');
+    // Si el click fue en la flecha (no en el link), prevenir navegación
+    if (e.target.closest('.toggle-arrow')) {
+      e.preventDefault();
+    }
+  });
+});
+
+// Cerrar al hacer click en un enlace del menú (no en los toggles)
+navMenu?.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    if (e.target.closest('[data-toggle="dropdown"]') && !e.target.closest('.toggle-arrow')) return;
+    closeMenu();
+  });
+});
 
 // Cerrar al tocar fuera del menú
 document.addEventListener('click', (e) => {
-  if (navMenu?.classList.contains('open') && !navMenu.contains(e.target) && e.target !== burger) {
+  if (navMenu?.classList.contains('open') && !navMenu.contains(e.target) && !burger.contains(e.target)) {
     closeMenu();
   }
+});
+
+// Cerrar con tecla Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeMenu();
 });
 
 // --- Scroll reveal ---
