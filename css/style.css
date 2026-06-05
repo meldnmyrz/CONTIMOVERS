@@ -1059,8 +1059,9 @@ ul { list-style: none; }
 ============================================================ */
 .cta-banner {
   position: relative;
-  padding: 120px 0;
+  padding: 120px 0 0; /* sin padding-bottom — el degradado llega al footer */
   overflow: hidden;
+  background: var(--navy-dark);
 }
 .cta-banner__bg {
   position: absolute;
@@ -1071,9 +1072,9 @@ ul { list-style: none; }
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(4,12,28,.92) 0%,
-    rgba(10,31,58,.88) 50%,
-    rgba(4,12,28,.92) 100%
+    rgba(5,12,28,.95) 0%,
+    rgba(10,31,58,.88) 45%,
+    rgba(10,31,58,1) 100%   /* termina exactamente en navy-dark → sin corte */
   );
 }
 .cta-banner__content {
@@ -1081,6 +1082,7 @@ ul { list-style: none; }
   z-index: 1;
   text-align: center;
   color: var(--white);
+  padding-bottom: 100px;
 }
 .cta-banner__title {
   font-family: 'Plus Jakarta Sans', sans-serif;
