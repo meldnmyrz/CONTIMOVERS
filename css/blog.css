@@ -173,6 +173,21 @@
   overflow: hidden;
 }
 .post-card__img-link { display: block; }
+.post-card__soon {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(10,31,58,.75);
+  color: rgba(255,255,255,.85);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+  z-index: 2;
+}
 .post-card__body {
   padding: 24px;
   flex: 1;
