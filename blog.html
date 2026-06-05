@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog & Guías de Mudanza | ContiMovers</title>
+  <meta name="description" content="Consejos, guías y recursos para planificar tu mudanza nacional o internacional. Todo lo que necesitas saber de la mano de los expertos de ContiMovers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Fraunces:ital,wght@1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/blog.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <img src="img/logo-contimovers.jpg" alt="ContiMovers Relocation" class="navbar__logo-img" />
+      </a>
+      <nav class="navbar__nav" id="navMenu">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <div class="nav-dropdown">
+          <a href="nosotros.html" class="nav-link">Nosotros <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="nosotros.html#quienes-somos">Quiénes Somos</a>
+            <a href="nosotros.html#filosofia">Filosofía</a>
+            <a href="nosotros.html#equipo">Nuestro Equipo</a>
+            <a href="certificaciones.html">Certificaciones</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link">Servicios <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <div class="dropdown-menu dropdown-menu--wide">
+            <a href="servicios/mudanzas-nacionales.html">Mudanzas Nacionales</a>
+            <a href="servicios/mudanzas-internacionales.html">Mudanzas Internacionales</a>
+            <a href="servicios/mudanzas-oficinas.html">Mudanzas de Oficinas</a>
+            <a href="servicios/embalaje-packing.html">Embalaje y Packing</a>
+            <a href="servicios/almacenaje.html">Almacenaje y Storage</a>
+            <a href="servicios/maquinaria-industrial.html">Maquinaria Industrial</a>
+          </div>
+        </div>
+        <a href="destinos.html" class="nav-link">Destinos</a>
+        <a href="blog.html" class="nav-link active">Blog</a>
+        <a href="contacto.html" class="nav-link">Contacto</a>
+      </nav>
+      <div class="navbar__actions">
+        <a href="contacto.html" class="btn btn--primary">Cotizar ahora</a>
+        <button class="navbar__burger" id="burger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════ HEADER ══════════════════════════════════ -->
+  <header class="blog-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Inicio</a>
+        <span>/</span>
+        <span>Blog</span>
+      </nav>
+      <h1>Blog & Guías de Mudanza</h1>
+      <p>Consejos prácticos, checklists y guías escritas por nuestros especialistas para que tu mudanza sea un éxito.</p>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════ FEATURED ═════════════════════════════════ -->
+  <section class="blog-featured section">
+    <div class="container">
+      <article class="blog-featured__card" data-reveal="up">
+        <div class="blog-featured__img">
+          <span class="blog-cat blog-cat--intl">Internacional</span>
+          [ FOTO: Vista aérea de un avión de carga sobrevolando Lima con contenedores de mudanza ]
+        </div>
+        <div class="blog-featured__body">
+          <div class="blog-meta">
+            <time datetime="2024-11-15">15 Nov 2024</time>
+            <span class="blog-meta__sep">·</span>
+            <span>8 min de lectura</span>
+          </div>
+          <h2>Guía completa para mudarte al extranjero desde Perú: todo lo que nadie te cuenta</h2>
+          <p>Desde los trámites de aduana hasta cómo empacar tu vajilla sin que llegue rota, esta guía cubre cada etapa de una mudanza internacional con lujo de detalle. Incluye checklists descargables y plazos reales basados en más de 3.500 mudanzas.</p>
+          <a href="blog/guia-mudanza-internacional-desde-peru.html" class="btn btn--navy">Leer artículo completo</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════ FILTROS ══════════════════════════════════ -->
+  <section class="blog-filters">
+    <div class="container">
+      <div class="blog-filters__inner">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="internacional">Internacional</button>
+        <button class="filter-btn" data-filter="nacional">Nacional</button>
+        <button class="filter-btn" data-filter="packing">Embalaje</button>
+        <button class="filter-btn" data-filter="oficinas">Oficinas</button>
+        <button class="filter-btn" data-filter="tips">Consejos</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════ GRID ═════════════════════════════════════ -->
+  <section class="blog-grid section">
+    <div class="container">
+      <div class="posts-grid" id="postsGrid">
+
+        <!-- Post 1 -->
+        <article class="post-card" data-category="internacional" data-reveal="up">
+          <a href="blog/guia-mudanza-internacional-desde-peru.html" class="post-card__img-link">
+            <div class="post-card__img">
+              <span class="blog-cat blog-cat--intl">Internacional</span>
+              [ FOTO: Puerto del Callao con contenedores de carga ]
+            </div>
+          </a>
+          <div class="post-card__body">
+            <div class="blog-meta">
+              <time datetime="2024-11-15">15 Nov 2024</time>
+              <span class="blog-meta__sep">·</span>
+              <span>8 min</span>
+            </div>
+            <h3><a href="blog/guia-mudanza-internacional-desde-peru.html">Guía completa para mudarte al extranjero desde Perú</a></h3>
+            <p>Todo sobre aduana, plazos, seguros y cómo empacar correctamente para un traslado intercontinental.</p>
+            <a href="blog/guia-mudanza-internacional-desde-peru.html" class="post-card__link">Leer más →</a>
+          </div>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="post-card" data-category="packing" data-reveal="up">
+          <a href="blog/como-empacar-objetos-fragiles.html" class="post-card__img-link">
+            <div class="post-card__img">
+              <span class="blog-cat blog-cat--pack">Embalaje</span>
+              [ FOTO: Manos embalando vajilla de porcelana con papel burbuja ]
+            </div>
+          </a>
+          <div class="post-card__body">
+            <div class="blog-meta">
+              <time datetime="2024-10-28">28 Oct 2024</time>
+              <span class="blog-meta__sep">·</span>
+              <span>5 min</span>
+            </div>
+            <h3><a href="blog/como-empacar-objetos-fragiles.html">Cómo empacar objetos frágiles sin que nada se rompa</a></h3>
+            <p>Técnicas profesionales de embalaje para vajillas, obras de arte, electrónicos y objetos de valor.</p>
+            <a href="blog/como-empacar-objetos-fragiles.html" class="post-card__link">Leer más →</a>
+          </div>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="post-card" data-category="tips" data-reveal="up">
+          <div class="post-card__img">
+            <span class="blog-cat blog-cat--tips">Consejos</span>
+            [ FOTO: Checklist impreso con cajas de mudanza al fondo ]
+          </div>
+          <div class="post-card__body">
+            <div class="blog-meta">
+              <time datetime="2024-10-10">10 Oct 2024</time>
+              <span class="blog-meta__sep">·</span>
+              <span>6 min</span>
+            </div>
+            <h3><a href="#">Checklist definitivo: 30 días antes de tu mudanza</a></h3>
+            <p>Un cronograma semana a semana para que no olvides nada importante antes del día del traslado.</p>
+            <a href="#" class="post-card__link">Leer más →</a>
+          </div>
+        </article>
+
+        <!-- Post 4 -->
+        <article class="post-card" data-category="nacional" data-reveal="up">
+          <div class="post-card__img">
+            <span class="blog-cat blog-cat--nac">Nacional</span>
+            [ FOTO: Camión de mudanza de ContiMovers en la carretera Panamericana ]
+          </div>
+          <div class="post-card__body">
+            <div class="blog-meta">
+              <time datetime="2024-09-22">22 Sep 2024</time>
+              <span class="blog-meta__sep">·</span>
+              <span>4 min</span>
+            </div>
+            <h3><a href="#">Mudarse de Lima a provincias: costos, tiempos y qué esperar</a></h3>
+            <p>Todo sobre rutas, plazos de entrega y cómo se cotiza una mudanza a Arequipa, Cusco o Trujillo.</p>
+            <a href="#" class="post-card__link">Leer más →</a>
+          </div>
+        </article>
+
+        <!-- Post 5 -->
+        <article class="post-card" data-category="oficinas" data-reveal="up">
+          <div class="post-card__img">
+            <span class="blog-cat blog-cat--ofi">Oficinas</span>
+            [ FOTO: Oficina moderna en proceso de mudanza con cajas etiquetadas ]
+          </div>
+          <div class="post-card__body">
+            <div class="blog-meta">
+              <time datetime="2024-09-05">05 Sep 2024</time>
+              <span class="blog-meta__sep">·</span>
+              <span>7 min</span>
+            </div>
+            <h3><a href="#">Mudanza corporativa: cómo mover una oficina sin perder un día de trabajo</a></h3>
+            <p>Protocolo paso a paso para relocalizar tu empresa minimizando el downtime y protegiendo los equipos de TI.</p>
+            <a href="#" class="post-card__link">Leer más →</a>
+          </div>
+        </article>
+
+        <!-- Post 6 -->
+        <article class="post-card" data-category="internacional" data-reveal="up">
+          <div class="post-card__img">
+            <span class="blog-cat blog-cat--intl">Internacional</span>
+            [ FOTO: Documentos de aduana y pasaporte sobre escritorio ]
+          </div>
+          <div class="post-card__body">
+            <div class="blog-meta">
+              <time datetime="2024-08-18">18 Ago 2024</time>
+              <span class="blog-meta__sep">·</span>
+              <span>10 min</span>
+            </div>
+            <h3><a href="#">Todo sobre Menaje de Casa: la clave para importar tus muebles sin pagar impuestos</a></h3>
+            <p>Requisitos, documentos y el proceso completo para acogerte al régimen de Menaje de Casa en Perú.</p>
+            <a href="#" class="post-card__link">Leer más →</a>
+          </div>
+        </article>
+
+        <!-- Post 7 -->
+        <article class="post-card" data-category="tips" data-reveal="up">
+          <div class="post-card__img">
+            <span class="blog-cat blog-cat--tips">Consejos</span>
+            [ FOTO: Familia feliz desempacando cajas en su nuevo hogar ]
+          </div>
+          <div class="post-card__body">
+            <div class="blog-meta">
+              <time datetime="2024-07-30">30 Jul 2024</time>
+              <span class="blog-meta__sep">·</span>
+              <span>5 min</span>
+            </div>
+            <h3><a href="#">Cómo organizar tu nuevo hogar en las primeras 48 horas post-mudanza</a></h3>
+            <p>Prioridades, orden de desempaque y los trucos que usan los profesionales para instalarse rápido.</p>
+            <a href="#" class="post-card__link">Leer más →</a>
+          </div>
+        </article>
+
+        <!-- Post 8 -->
+        <article class="post-card" data-category="packing" data-reveal="up">
+          <div class="post-card__img">
+            <span class="blog-cat blog-cat--pack">Embalaje</span>
+            [ FOTO: Caja especializada de madera para cuadro o pintura ]
+          </div>
+          <div class="post-card__body">
+            <div class="blog-meta">
+              <time datetime="2024-07-12">12 Jul 2024</time>
+              <span class="blog-meta__sep">·</span>
+              <span>6 min</span>
+            </div>
+            <h3><a href="#">Cómo transportar obras de arte y antigüedades de forma segura</a></h3>
+            <p>Cajas de madera a medida, control de temperatura y seguros especializados para piezas de alto valor.</p>
+            <a href="#" class="post-card__link">Leer más →</a>
+          </div>
+        </article>
+
+        <!-- Post 9 -->
+        <article class="post-card" data-category="nacional" data-reveal="up">
+          <div class="post-card__img">
+            <span class="blog-cat blog-cat--nac">Nacional</span>
+            [ FOTO: Almacén con cajas numeradas y bien organizadas ]
+          </div>
+          <div class="post-card__body">
+            <div class="blog-meta">
+              <time datetime="2024-06-25">25 Jun 2024</time>
+              <span class="blog-meta__sep">·</span>
+              <span>4 min</span>
+            </div>
+            <h3><a href="#">¿Cuándo conviene contratar almacenaje temporal durante tu mudanza?</a></h3>
+            <p>Casos en los que el almacenaje puente es la opción más inteligente y cómo elegir el servicio correcto.</p>
+            <a href="#" class="post-card__link">Leer más →</a>
+          </div>
+        </article>
+
+      </div><!-- /posts-grid -->
+
+      <!-- Paginación -->
+      <div class="blog-pagination" data-reveal="up">
+        <button class="pagination-btn active" aria-current="page">1</button>
+        <button class="pagination-btn">2</button>
+        <button class="pagination-btn">3</button>
+        <span class="pagination-dots">…</span>
+        <button class="pagination-btn">8</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════ NEWSLETTER ═══════════════════════════════ -->
+  <section class="newsletter section">
+    <div class="container">
+      <div class="newsletter__card" data-reveal="up">
+        <div class="newsletter__text">
+          <h2>Recibe guías y consejos en tu correo</h2>
+          <p>Sin spam. Solo contenido útil sobre mudanzas, una vez al mes.</p>
+        </div>
+        <form class="newsletter__form" id="newsletterForm" novalidate>
+          <input type="email" name="email" placeholder="tu@correo.com" required />
+          <button type="submit" class="btn btn--emerald">Suscribirme</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════ CTA ══════════════════════════════════════ -->
+  <section class="cta-banner">
+    <div class="container cta-banner__inner">
+      <div class="cta-banner__text">
+        <h2>¿Listo para planificar tu mudanza?</h2>
+        <p>Nuestros especialistas te asesoran sin costo y sin compromiso.</p>
+      </div>
+      <div class="cta-banner__actions">
+        <a href="contacto.html" class="btn btn--emerald">Solicitar cotización</a>
+        <a href="tel:+51965452559" class="btn btn--outline-white">Llamar ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════ FOOTER ══════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo"><img src="img/logo-contimovers.jpg" alt="ContiMovers Relocation" class="footer__logo-img" /></a>
+        <p>Más de 35 años moviendo familias y empresas con seguridad, precisión y calidez humana.</p>
+        <div class="footer__socials">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">ig</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="servicios/mudanzas-nacionales.html">Mudanzas Nacionales</a></li>
+          <li><a href="servicios/mudanzas-internacionales.html">Mudanzas Internacionales</a></li>
+          <li><a href="servicios/mudanzas-oficinas.html">Mudanzas de Oficinas</a></li>
+          <li><a href="servicios/embalaje-packing.html">Embalaje & Packing</a></li>
+          <li><a href="servicios/almacenaje.html">Almacenaje</a></li>
+          <li><a href="servicios/maquinaria-industrial.html">Maquinaria Industrial</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="certificaciones.html">Certificaciones</a></li>
+          <li><a href="destinos.html">Destinos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+51965452559">+51 965 452 559</a></li>
+          <li><a href="mailto:info@contimovers.com">info@contimovers.com</a></li>
+          <li>Av. Principal 123, Lima, Perú</li>
+        </ul>
+        <div class="footer__badges">
+          <span class="badge-fidi">FIDI Member</span>
+          <span class="badge-iam">IAM Member</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© 2024 ContiMovers S.A.C. — RUC 20XXXXXXXXX · Todos los derechos reservados</p>
+        <p><a href="#">Política de Privacidad</a> · <a href="#">Términos y Condiciones</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/51965452559?text=Hola%2C%20quiero%20más%20información%20sobre%20sus%20servicios" class="wa-float" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="wa-float__tooltip">¿Hablamos?</span>
+  </a>
+
+  <script src="js/main.js"></script>
+  <script src="js/blog.js"></script>
+</body>
+</html>

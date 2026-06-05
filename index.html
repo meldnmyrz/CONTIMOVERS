@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ContiMovers — Mudanzas Nacionales e Internacionales desde 1987</title>
+  <meta name="description" content="ContiMovers, expertos en mudanzas nacionales e internacionales, embalaje, almacenaje y traslado de oficinas. Más de 31 años de experiencia en Perú y el mundo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Fraunces:ital,wght@1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <img src="img/logo-contimovers.jpg" alt="ContiMovers Relocation" class="navbar__logo-img" />
+      </a>
+
+      <nav class="navbar__nav" id="navMenu">
+        <a href="index.html" class="nav-link active">Inicio</a>
+        <div class="nav-dropdown">
+          <a href="nosotros.html" class="nav-link">Nosotros <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="nosotros.html#quienes-somos">Quiénes Somos</a>
+            <a href="nosotros.html#filosofia">Filosofía</a>
+            <a href="nosotros.html#equipo">Nuestro Equipo</a>
+            <a href="certificaciones.html">Certificaciones</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="servicios.html" class="nav-link">Servicios <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <div class="dropdown-menu dropdown-menu--wide">
+            <a href="servicios/mudanzas-nacionales.html">Mudanzas Nacionales</a>
+            <a href="servicios/mudanzas-internacionales.html">Mudanzas Internacionales</a>
+            <a href="servicios/mudanzas-oficinas.html">Mudanzas de Oficinas</a>
+            <a href="servicios/embalaje-packing.html">Embalaje y Packing</a>
+            <a href="servicios/almacenaje.html">Almacenaje y Storage</a>
+            <a href="servicios/maquinaria-industrial.html">Maquinaria Industrial</a>
+          </div>
+        </div>
+        <a href="destinos.html" class="nav-link">Destinos</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contacto.html" class="nav-link">Contacto</a>
+      </nav>
+
+      <div class="navbar__actions">
+        <a href="contacto.html" class="btn btn--primary">Cotizar ahora</a>
+        <button class="navbar__burger" id="burger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       HERO SCROLL FULLSCREEN
+  ============================================================ -->
+  <!-- hero-scroll: 200vh de altura — el sticky se queda fijo mientras scrollas -->
+  <div class="hero-scroll" id="heroScroll">
+    <div class="hero-sticky" id="heroSticky">
+
+      <!-- SLIDE 1 -->
+      <div class="hero-slide" id="heroSlide1">
+        <div class="hero-slide__bg">
+          <img src="img/hero-render.jpg" alt="ContiMovers — flota y operaciones en puerto" class="hero-slide__img" />
+          <div class="hero-slide__overlay"></div>
+        </div>
+        <div class="hero-slide__content">
+          <h1 class="hero-slide__title">
+            Tu mudanza perfecta,<br />
+            <em class="hero-slide__accent">a cualquier parte</em><br />
+            del mundo.
+          </h1>
+          <p class="hero-slide__sub">
+            Traslados nacionales e internacionales con el cuidado que tu hogar y tu empresa merecen.
+          </p>
+          <div class="hero-slide__ctas">
+            <a href="contacto.html" class="btn btn--emerald btn--lg">
+              Solicitar cotización
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h12M10 4l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="servicios.html" class="btn btn--outline-white btn--lg">Ver servicios</a>
+          </div>
+        </div>
+        <div class="hero-slide__scroll-hint">
+          <div class="scroll-line"></div>
+          <span>Scroll</span>
+        </div>
+      </div>
+
+      <!-- SLIDE 2 — superpuesto, opacity 0 inicialmente -->
+      <div class="hero-slide" id="heroSlide2">
+        <div class="hero-slide__bg">
+          <img src="img/hero-forklift.jpg" alt="ContiMovers — embalaje y carga de contenedor" class="hero-slide__img" />
+          <div class="hero-slide__overlay hero-slide__overlay--dark"></div>
+        </div>
+        <div class="hero-slide__content">
+          <h2 class="hero-slide__title">
+            Somos <em class="hero-slide__accent">expertos</em>
+          </h2>
+          <p class="hero-slide__sub hero-slide__sub--wide">
+            Olvídate del estrés. Nuestro equipo está especializado y capacitado, listo para encargarse de todo: desde un embalaje meticuloso y almacenamiento seguro, hasta una mudanza impecable según tus necesidades.
+          </p>
+        </div>
+      </div>
+
+      <!-- Dots -->
+      <div class="hero-dots">
+        <button class="hero-dot hero-dot--active" aria-label="Slide 1"></button>
+        <button class="hero-dot" aria-label="Slide 2"></button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================
+       TRUST BAR
+  ============================================================ -->
+  <section class="trust-bar">
+    <div class="container trust-bar__grid">
+      <div class="trust-item">
+        <span class="trust-item__number" data-count="31">0</span>
+        <span class="trust-item__unit">años</span>
+        <span class="trust-item__label">de experiencia</span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <span class="trust-item__number" data-count="6421">0</span>
+        <span class="trust-item__label">mudanzas completadas</span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <span class="trust-item__number" data-count="3500">0</span>
+        <span class="trust-item__label">clientes satisfechos</span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <span class="trust-item__number" data-count="15">0</span>
+        <span class="trust-item__unit">+</span>
+        <span class="trust-item__label">países de cobertura</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       INTRO DE MARCA
+  ============================================================ -->
+  <section class="brand-intro section">
+    <div class="container brand-intro__grid">
+      <div class="brand-intro__image" data-reveal="left">
+        <img src="img/operacion-container.jpg" alt="Operación ContiMovers — carga de contenedor internacional" class="brand-intro__real-img" />
+        <div class="brand-intro__floating-card">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#00A86B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div>
+            <strong>Miembro FIDI & IAM</strong>
+            <span>Asociaciones internacionales de mudanzas</span>
+          </div>
+        </div>
+      </div>
+      <div class="brand-intro__text" data-reveal="right">
+        <span class="section-tag">Quiénes somos</span>
+        <h2 class="section-title">Movemos vidas,<br /><em>no solo objetos.</em></h2>
+        <p class="section-body">
+          ContiMovers nació en 1987 con una convicción simple: cada mudanza es el inicio
+          de un nuevo capítulo. Por eso tratamos cada traslado con la misma dedicación
+          que pondríamos en el nuestro propio.
+        </p>
+        <p class="section-body">
+          Hoy somos la empresa de relocation más experimentada del Perú, con cobertura
+          nacional completa —costa, sierra y selva— y presencia en más de 15 países.
+          Nuestro equipo especializado, flota propia y metodología certificada garantizan
+          que cada objeto llegue donde debe, cuando debe.
+        </p>
+        <div class="brand-intro__pillars">
+          <div class="pillar">
+            <div class="pillar__icon">
+              <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#00A86B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <strong>Seguridad garantizada</strong>
+              <span>Embalaje especializado y seguro de carga incluido</span>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar__icon">
+              <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#00A86B" stroke-width="2"/><path d="M12 6v6l4 2" stroke="#00A86B" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <strong>Puntualidad absoluta</strong>
+              <span>Cumplimos los plazos comprometidos, siempre</span>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar__icon">
+              <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#00A86B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <strong>Equipo certificado</strong>
+              <span>Personal entrenado en estándares internacionales</span>
+            </div>
+          </div>
+        </div>
+        <a href="nosotros.html" class="btn btn--navy">Conocer nuestra historia</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SERVICIOS
+  ============================================================ -->
+  <section class="services section section--canvas" id="servicios">
+    <div class="container">
+      <div class="section-header" data-reveal="up">
+        <span class="section-tag">Lo que hacemos</span>
+        <h2 class="section-title">Soluciones para cada<br /><em>tipo de mudanza</em></h2>
+        <p class="section-subtitle">
+          Desde una habitación hasta una corporación entera. Desde Lima hasta cualquier ciudad del mundo.
+        </p>
+      </div>
+
+      <div class="services__grid">
+
+        <a href="servicios/mudanzas-nacionales.html" class="service-card" data-reveal="up" data-delay="0">
+          <div class="service-card__num">01</div>
+          <div class="service-card__icon">
+            <svg width="30" height="30" fill="none" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1" stroke="currentColor" stroke-width="1.8"/><path d="M16 8h4l3 5v3h-7V8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="5.5" cy="18.5" r="2.5" stroke="currentColor" stroke-width="1.8"/><circle cx="18.5" cy="18.5" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>
+          </div>
+          <div class="service-card__body">
+            <h3>Mudanzas Nacionales</h3>
+            <p>Cobertura completa en Perú. Camiones de 45m³ con tecnología de rastreo en tiempo real.</p>
+          </div>
+          <span class="service-card__link">Ver servicio <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div class="service-card__bar"></div>
+        </a>
+
+        <a href="servicios/mudanzas-internacionales.html" class="service-card service-card--featured" data-reveal="up" data-delay="80">
+          <div class="service-card__num">02</div>
+          <div class="service-card__badge">Más solicitado</div>
+          <div class="service-card__icon">
+            <svg width="30" height="30" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" stroke="currentColor" stroke-width="1.8"/></svg>
+          </div>
+          <div class="service-card__body">
+            <h3>Mudanzas Internacionales</h3>
+            <p>Exportamos e importamos a cualquier ciudad del mundo bajo estándares FIDI y normas aduaneras.</p>
+          </div>
+          <span class="service-card__link">Ver servicio <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div class="service-card__bar"></div>
+        </a>
+
+        <a href="servicios/mudanzas-oficinas.html" class="service-card" data-reveal="up" data-delay="160">
+          <div class="service-card__num">03</div>
+          <div class="service-card__icon">
+            <svg width="30" height="30" fill="none" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 22V12h6v10" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="service-card__body">
+            <h3>Mudanzas de Oficinas</h3>
+            <p>Minimizamos el tiempo de inactividad con protocolos especializados para entornos corporativos.</p>
+          </div>
+          <span class="service-card__link">Ver servicio <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div class="service-card__bar"></div>
+        </a>
+
+        <a href="servicios/embalaje-packing.html" class="service-card" data-reveal="up" data-delay="0">
+          <div class="service-card__num">04</div>
+          <div class="service-card__icon">
+            <svg width="30" height="30" fill="none" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <div class="service-card__body">
+            <h3>Embalaje y Packing</h3>
+            <p>Materiales premium y técnicas especializadas para proteger desde vajilla delicada hasta obras de arte.</p>
+          </div>
+          <span class="service-card__link">Ver servicio <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div class="service-card__bar"></div>
+        </a>
+
+        <a href="servicios/almacenaje.html" class="service-card" data-reveal="up" data-delay="80">
+          <div class="service-card__num">05</div>
+          <div class="service-card__icon">
+            <svg width="30" height="30" fill="none" viewBox="0 0 24 24"><path d="M2 7l10-5 10 5v14H2V7z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><rect x="9" y="12" width="6" height="9" stroke="currentColor" stroke-width="1.8"/></svg>
+          </div>
+          <div class="service-card__body">
+            <h3>Almacenaje y Storage</h3>
+            <p>Instalaciones modernas en Lima con control 24/7, CCTV y condiciones óptimas de conservación.</p>
+          </div>
+          <span class="service-card__link">Ver servicio <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div class="service-card__bar"></div>
+        </a>
+
+        <a href="servicios/maquinaria-industrial.html" class="service-card" data-reveal="up" data-delay="160">
+          <div class="service-card__num">06</div>
+          <div class="service-card__icon">
+            <svg width="30" height="30" fill="none" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-2-2a1 1 0 010-1.4l8-8a1 1 0 011.4 0l2 2z" stroke="currentColor" stroke-width="1.8"/><path d="M19 2l3 3-1.5 1.5M9 20l-3 3H3v-3l3-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="service-card__body">
+            <h3>Maquinaria Industrial</h3>
+            <p>Embalaje en cajones de madera con refuerzo técnico para equipos pesados y de alta precisión.</p>
+          </div>
+          <span class="service-card__link">Ver servicio <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div class="service-card__bar"></div>
+        </a>
+
+      </div>
+
+      <div class="services__cta" data-reveal="up">
+        <a href="servicios.html" class="btn btn--navy">Ver todos los servicios</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CÓMO FUNCIONA
+  ============================================================ -->
+  <section class="how-it-works section">
+    <div class="container">
+      <div class="section-header" data-reveal="up">
+        <span class="section-tag">El proceso</span>
+        <h2 class="section-title">Tu mudanza en<br /><em>4 pasos simples</em></h2>
+      </div>
+      <div class="steps__grid">
+        <div class="step" data-reveal="up" data-delay="0">
+          <div class="step__number">01</div>
+          <div class="step__icon">
+            <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" stroke="#00A86B" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Contacto y cotización</h3>
+          <p>Nos cuentas los detalles de tu mudanza y en menos de 24 horas tienes una cotización precisa y sin sorpresas.</p>
+        </div>
+        <div class="step__connector" aria-hidden="true"></div>
+        <div class="step" data-reveal="up" data-delay="100">
+          <div class="step__number">02</div>
+          <div class="step__icon">
+            <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" stroke="#00A86B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Planificación detallada</h3>
+          <p>Nuestros coordinadores diseñan el plan logístico: inventario, fechas, rutas y equipo asignado.</p>
+        </div>
+        <div class="step__connector" aria-hidden="true"></div>
+        <div class="step" data-reveal="up" data-delay="200">
+          <div class="step__number">03</div>
+          <div class="step__icon">
+            <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1" stroke="#00A86B" stroke-width="1.8"/><path d="M16 8h4l3 5v3h-7V8z" stroke="#00A86B" stroke-width="1.8" stroke-linejoin="round"/><circle cx="5.5" cy="18.5" r="2.5" stroke="#00A86B" stroke-width="1.8"/><circle cx="18.5" cy="18.5" r="2.5" stroke="#00A86B" stroke-width="1.8"/></svg>
+          </div>
+          <h3>Embalaje y traslado</h3>
+          <p>Equipo profesional embala cada pieza con cuidado y ejecuta el traslado con puntualidad garantizada.</p>
+        </div>
+        <div class="step__connector" aria-hidden="true"></div>
+        <div class="step" data-reveal="up" data-delay="300">
+          <div class="step__number">04</div>
+          <div class="step__icon">
+            <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" stroke="#00A86B" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 22V12h6v10" stroke="#00A86B" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Instalación y entrega</h3>
+          <p>Desembalamos, instalamos y verificamos contigo que todo esté perfecto en tu nuevo hogar u oficina.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       POR QUÉ CONTIMOVERS
+  ============================================================ -->
+  <section class="why-us section section--canvas">
+    <div class="container why-us__grid">
+      <div class="why-us__text" data-reveal="left">
+        <span class="section-tag">Por qué elegirnos</span>
+        <h2 class="section-title">La diferencia está<br /><em>en los detalles.</em></h2>
+        <p class="section-body">
+          En un mercado lleno de opciones, la verdadera diferencia no es el precio —
+          es la tranquilidad que sentirás el día de tu mudanza.
+        </p>
+        <div class="why-us__features">
+          <div class="feature-item">
+            <div class="feature-item__dot"></div>
+            <div>
+              <strong>Flota propia y moderna</strong>
+              <span>Camiones cerrados de 45m³ con rastreo GPS en tiempo real</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-item__dot"></div>
+            <div>
+              <strong>Seguro de carga incluido</strong>
+              <span>Tus pertenencias protegidas de puerta a puerta</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-item__dot"></div>
+            <div>
+              <strong>Afiliados FIDI & IAM</strong>
+              <span>Red global de agentes en más de 150 países</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-item__dot"></div>
+            <div>
+              <strong>Atención personalizada</strong>
+              <span>Un coordinador exclusivo para tu mudanza, de inicio a fin</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-item__dot"></div>
+            <div>
+              <strong>31 años de trayectoria</strong>
+              <span>La empresa de relocation más experimentada del Perú</span>
+            </div>
+          </div>
+        </div>
+        <a href="contacto.html" class="btn btn--emerald">Solicitar cotización gratis</a>
+      </div>
+      <div class="why-us__image" data-reveal="right">
+        <!-- PLACEHOLDER: Foto horizontal — coordinador revisando inventario con cliente,
+             ambiente profesional y cálido. Foto real, no stock. -->
+        <div class="img-placeholder img-placeholder--tall">
+          [ FOTO: Coordinador ContiMovers con cliente — revisando inventario, profesional y cercano ]
+        </div>
+        <div class="why-us__badge">
+          <div class="badge-number">+31</div>
+          <div class="badge-label">años<br />de confianza</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TESTIMONIOS
+  ============================================================ -->
+  <section class="testimonials section">
+    <div class="container">
+      <div class="section-header" data-reveal="up">
+        <span class="section-tag">Lo que dicen</span>
+        <h2 class="section-title">Más de 3,500 familias<br /><em>ya confiaron en nosotros.</em></h2>
+      </div>
+      <div class="testimonials__grid">
+
+        <div class="testimonial-card" data-reveal="up" data-delay="0">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <blockquote>
+            "Mudamos toda la oficina de 3 pisos en un fin de semana. El equipo de ContiMovers fue
+            increíblemente organizado. El lunes ya estábamos operativos al 100%."
+          </blockquote>
+          <div class="testimonial-card__author">
+            <!-- PLACEHOLDER: Foto de perfil del cliente, formato circular -->
+            <div class="avatar-placeholder">MR</div>
+            <div>
+              <strong>Miguel Ramírez</strong>
+              <span>Gerente General · Lima → Santiago de Chile</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card" data-reveal="up" data-delay="100">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <blockquote>
+            "Viajamos con toda la familia a Miami y enviamos todos nuestros muebles.
+            Todo llegó perfectamente embalado, sin un rasguño. Proceso sin estrés."
+          </blockquote>
+          <div class="testimonial-card__author">
+            <div class="avatar-placeholder">CS</div>
+            <div>
+              <strong>Carolina Salas</strong>
+              <span>Mudanza residencial · Lima → Miami, EE.UU.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card" data-reveal="up" data-delay="200">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <blockquote>
+            "Llevamos maquinaria pesada de producción de Lima a Arequipa.
+            El embalaje en cajones fue impecable. Cero daños, entrega puntual."
+          </blockquote>
+          <div class="testimonial-card__author">
+            <div class="avatar-placeholder">JP</div>
+            <div>
+              <strong>Jorge Paredes</strong>
+              <span>Director de Operaciones · Lima → Arequipa</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PORTFOLIO / PROYECTOS
+  ============================================================ -->
+  <section class="portfolio section section--canvas">
+    <div class="container">
+      <div class="section-header" data-reveal="up">
+        <span class="section-tag">Nuestro trabajo</span>
+        <h2 class="section-title">Proyectos que<br /><em>hablan por sí solos.</em></h2>
+      </div>
+      <div class="portfolio__grid">
+        <div class="portfolio-item portfolio-item--large" data-reveal="up">
+          <img src="img/forklift-caja.jpg" alt="Carga de cajón ContiMovers — montacargas en operación" class="portfolio-item__img" />
+          <div class="portfolio-item__overlay">
+            <span class="portfolio-item__tag">Internacional</span>
+            <h4>Exportación a Francia</h4>
+          </div>
+        </div>
+        <div class="portfolio-item" data-reveal="up" data-delay="80">
+          <div class="img-placeholder img-placeholder--portfolio">
+            [ FOTO: Mudanza corporativa — oficina Lima ]
+          </div>
+          <div class="portfolio-item__overlay">
+            <span class="portfolio-item__tag">Corporativo</span>
+            <h4>Traslado de sede empresarial</h4>
+          </div>
+        </div>
+        <div class="portfolio-item" data-reveal="up" data-delay="160">
+          <div class="img-placeholder img-placeholder--portfolio">
+            [ FOTO: Embalaje de maquinaria — cajón de madera reforzado ]
+          </div>
+          <div class="portfolio-item__overlay">
+            <span class="portfolio-item__tag">Industrial</span>
+            <h4>Maquinaria de precisión</h4>
+          </div>
+        </div>
+        <div class="portfolio-item" data-reveal="up" data-delay="80">
+          <div class="img-placeholder img-placeholder--portfolio">
+            [ FOTO: Almacén moderno Lima — filas ordenadas ]
+          </div>
+          <div class="portfolio-item__overlay">
+            <span class="portfolio-item__tag">Storage</span>
+            <h4>Almacenaje de larga duración</h4>
+          </div>
+        </div>
+        <div class="portfolio-item" data-reveal="up" data-delay="160">
+          <div class="img-placeholder img-placeholder--portfolio">
+            [ FOTO: Familia recibiendo muebles en nuevo hogar ]
+          </div>
+          <div class="portfolio-item__overlay">
+            <span class="portfolio-item__tag">Residencial</span>
+            <h4>Mudanza familiar a provincia</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA BANNER
+  ============================================================ -->
+  <section class="cta-banner">
+    <div class="cta-banner__bg">
+      <!-- PLACEHOLDER: Foto de fondo oscura — camión de noche o ciudad desde arriba -->
+      <div class="img-placeholder img-placeholder--cta">[ FOTO: Camión ContiMovers de noche / ciudad desde arriba ]</div>
+      <div class="cta-banner__overlay"></div>
+    </div>
+    <div class="container cta-banner__content" data-reveal="up">
+      <span class="section-tag section-tag--light">¿Listo para comenzar?</span>
+      <h2 class="cta-banner__title">
+        Tu próxima mudanza<br />merece ser <em>perfecta.</em>
+      </h2>
+      <p>Contáctanos hoy y recibe una cotización sin costo en menos de 24 horas.</p>
+      <div class="cta-banner__actions">
+        <a href="contacto.html" class="btn btn--emerald btn--lg">Cotizar ahora — es gratis</a>
+        <a href="https://wa.me/51965452559?text=Hola%2C%20quiero%20cotizar%20una%20mudanza" target="_blank" rel="noopener" class="btn btn--outline-white btn--lg">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Escribir por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BLOG PREVIEW
+  ============================================================ -->
+  <section class="blog-preview section">
+    <div class="container">
+      <div class="section-header" data-reveal="up">
+        <span class="section-tag">Nuestro blog</span>
+        <h2 class="section-title">Consejos para tu<br /><em>próxima mudanza.</em></h2>
+      </div>
+      <div class="blog-preview__grid">
+
+        <a href="blog/como-preparar-mudanza-internacional.html" class="blog-card" data-reveal="up" data-delay="0">
+          <div class="blog-card__img">
+            <!-- PLACEHOLDER: Imagen conceptual de maletas + globo terráqueo -->
+            <div class="img-placeholder">[ FOTO: Maletas y globo — mudanza internacional ]</div>
+            <span class="blog-card__tag">Internacional</span>
+          </div>
+          <div class="blog-card__body">
+            <span class="blog-card__date">28 Mayo 2026</span>
+            <h3>Cómo preparar tu mudanza internacional paso a paso</h3>
+            <p>Todo lo que debes saber antes de cruzar fronteras con tus pertenencias.</p>
+          </div>
+        </a>
+
+        <a href="blog/embalaje-objetos-fragiles.html" class="blog-card" data-reveal="up" data-delay="100">
+          <div class="blog-card__img">
+            <div class="img-placeholder">[ FOTO: Técnico embalando vajilla delicada ]</div>
+            <span class="blog-card__tag">Embalaje</span>
+          </div>
+          <div class="blog-card__body">
+            <span class="blog-card__date">15 Mayo 2026</span>
+            <h3>Los 7 errores más comunes al embalar objetos frágiles</h3>
+            <p>Aprende a proteger tus artículos más valiosos como un profesional.</p>
+          </div>
+        </a>
+
+        <a href="blog/mudanza-de-oficina-sin-perder-productividad.html" class="blog-card" data-reveal="up" data-delay="200">
+          <div class="blog-card__img">
+            <div class="img-placeholder">[ FOTO: Oficina moderna, equipo trabajando ]</div>
+            <span class="blog-card__tag">Corporativo</span>
+          </div>
+          <div class="blog-card__body">
+            <span class="blog-card__date">2 Mayo 2026</span>
+            <h3>Mudanza de oficina sin perder productividad</h3>
+            <p>Estrategias para que tu empresa siga operando durante el traslado.</p>
+          </div>
+        </a>
+
+      </div>
+      <div class="blog-preview__cta" data-reveal="up">
+        <a href="blog.html" class="btn btn--navy">Ver todos los artículos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo">
+          <img src="img/logo-contimovers.jpg" alt="ContiMovers Relocation" class="footer__logo-img" />
+        </a>
+        <p class="footer__tagline">
+          Mudanzas nacionales e internacionales con más de 31 años de experiencia.
+          Tu tranquilidad, nuestra responsabilidad.
+        </p>
+        <div class="footer__social">
+          <a href="https://facebook.com/contimovers" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://wa.me/51965452559" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a href="mailto:contimovers@contimovers.com" aria-label="Email">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="1.8"/><path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="1.8"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="servicios/mudanzas-nacionales.html">Mudanzas Nacionales</a></li>
+          <li><a href="servicios/mudanzas-internacionales.html">Mudanzas Internacionales</a></li>
+          <li><a href="servicios/mudanzas-oficinas.html">Mudanzas de Oficinas</a></li>
+          <li><a href="servicios/embalaje-packing.html">Embalaje y Packing</a></li>
+          <li><a href="servicios/almacenaje.html">Almacenaje y Storage</a></li>
+          <li><a href="servicios/maquinaria-industrial.html">Maquinaria Industrial</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="nosotros.html">Quiénes Somos</a></li>
+          <li><a href="nosotros.html#filosofia">Misión y Valores</a></li>
+          <li><a href="nosotros.html#equipo">Nuestro Equipo</a></li>
+          <li><a href="certificaciones.html">Certificaciones</a></li>
+          <li><a href="destinos.html">Destinos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <ul class="footer__contact-list">
+          <li>
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z" stroke="currentColor" stroke-width="1.6"/></svg>
+            <span>(511) 252-7571</span>
+          </li>
+          <li>
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span>(51) 965 452 559</span>
+          </li>
+          <li>
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="1.6"/><path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="1.6"/></svg>
+            <span>contimovers@contimovers.com</span>
+          </li>
+          <li>
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.6"/></svg>
+            <span>Lima, Perú</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <span>© 2026 ContiMovers Relocation S.A.C. Todos los derechos reservados.</span>
+        <div class="footer__bottom-links">
+          <a href="privacidad.html">Política de Privacidad</a>
+          <a href="terminos.html">Términos y Condiciones</a>
+          <a href="libro-de-reclamaciones.html">Libro de Reclamaciones</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/51965452559?text=Hola%2C%20quiero%20cotizar%20una%20mudanza"
+     target="_blank" rel="noopener"
+     class="whatsapp-float"
+     aria-label="Contactar por WhatsApp">
+    <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="whatsapp-float__tooltip">¿Necesitas ayuda?</span>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

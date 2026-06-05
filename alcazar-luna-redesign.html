@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hotel Alcázar de Luna — Chilpancingo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0d1b2e;
+      --navy2:  #162234;
+      --gold:   #d4a843;
+      --gold2:  #e8c070;
+      --white:  #ffffff;
+      --offwhite: #f8f6f2;
+      --cream:  #f2ede4;
+      --text:   #1a1a2e;
+      --gray:   #6b7280;
+      --lgray:  #9ca3af;
+      --border: #e5e0d8;
+      --red:    #dc2626;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans:  'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--white);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--navy); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      height: 72px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px;
+      background: transparent;
+      transition: background .35s, box-shadow .35s;
+    }
+    nav.solid {
+      background: rgba(13,27,46,.97);
+      box-shadow: 0 1px 0 rgba(212,168,67,.2);
+    }
+    .logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+    }
+    .logo-icon {
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 1.5px solid var(--gold);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 2px;
+    }
+    .logo-icon-top {
+      font-family: var(--font-serif); font-size: 8px; font-weight: 700;
+      color: var(--gold); letter-spacing: 1px; text-transform: uppercase; line-height: 1;
+    }
+    .logo-icon-line { width: 20px; height: 1px; background: var(--gold); opacity: .6; }
+    .logo-text { display: flex; flex-direction: column; }
+    .logo-name {
+      font-family: var(--font-serif); font-size: 16px; font-weight: 700;
+      color: var(--white); letter-spacing: 3px; text-transform: uppercase; line-height: 1.1;
+    }
+    .logo-sub {
+      font-size: 8px; font-weight: 400; letter-spacing: 3px;
+      color: var(--gold); text-transform: uppercase;
+    }
+    .nav-menu {
+      display: flex; align-items: center; gap: 28px; list-style: none;
+    }
+    .nav-menu a {
+      font-size: 12px; font-weight: 500; letter-spacing: .5px;
+      color: rgba(255,255,255,.85); text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-menu a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold) !important; color: var(--navy) !important;
+      padding: 10px 22px; font-weight: 700 !important;
+      font-size: 11px !important; letter-spacing: 1px !important;
+      transition: background .2s !important;
+    }
+    .nav-cta:hover { background: var(--gold2) !important; color: var(--navy) !important; }
+
+    /* HERO */
+    .hero {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: flex-start;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(to right, rgba(13,27,46,.82) 0%, rgba(13,27,46,.5) 55%, rgba(13,27,46,.2) 100%),
+        url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1900&q=90&fit=crop') center/cover no-repeat;
+      animation: zoom 14s ease-out infinite alternate;
+    }
+    @keyframes zoom {
+      from { transform: scale(1.04); }
+      to   { transform: scale(1.0); }
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 170px 60px 280px;
+      max-width: 680px;
+    }
+    .hero-quote {
+      font-family: var(--font-serif); font-style: italic;
+      font-size: 19px; font-weight: 400; color: var(--gold2);
+      margin-bottom: 16px; letter-spacing: .5px;
+    }
+    .hero-quote::before { content: '\201C'; }
+    .hero-quote::after  { content: '\201D'; }
+    .hero h1 {
+      font-family: var(--font-sans);
+      font-size: clamp(34px, 5vw, 62px);
+      font-weight: 800; line-height: 1.1;
+      color: var(--white); letter-spacing: -1.5px;
+      margin-bottom: 16px;
+    }
+    .hero-desc {
+      font-size: 14px; font-weight: 400; line-height: 1.75;
+      color: rgba(255,255,255,.7); max-width: 440px;
+    }
+    .hero-desc strong { color: var(--white); font-weight: 600;
+      text-decoration: underline; text-decoration-color: rgba(255,255,255,.3);
+    }
+
+    /* BOOKING CARD */
+    .booking-wrap {
+      position: absolute; bottom: 0; left: 0; right: 0; z-index: 10;
+      display: flex; justify-content: center;
+      padding: 0 60px;
+    }
+    .booking-card {
+      background: var(--white);
+      box-shadow: 0 -4px 40px rgba(0,0,0,.22), 0 20px 60px rgba(0,0,0,.18);
+      width: 100%; max-width: 980px;
+      padding: 24px 28px 22px;
+    }
+    .booking-fields {
+      display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
+      border: 1px solid var(--border);
+      margin-bottom: 16px;
+    }
+    .bf {
+      padding: 14px 18px;
+      border-right: 1px solid var(--border);
+      cursor: pointer;
+      transition: background .15s;
+    }
+    .bf:hover { background: var(--offwhite); }
+    .bf:last-child { border-right: none; }
+    .bf-top {
+      display: flex; align-items: center; gap: 6px;
+      margin-bottom: 7px;
+    }
+    .bf-top svg { color: var(--navy); opacity: .55; flex-shrink: 0; }
+    .bf-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+      color: var(--navy); text-transform: uppercase;
+    }
+    .bf input, .bf select {
+      width: 100%; border: none; outline: none;
+      font-family: var(--font-sans); font-size: 13px;
+      font-weight: 400; color: var(--gray); background: none; cursor: pointer;
+    }
+    .bf select option { background: var(--white); }
+    .booking-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .booking-guarantee {
+      font-size: 12px; font-weight: 500; color: var(--gray);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .booking-guarantee svg { color: #16a34a; }
+    .btn-buscar {
+      background: var(--navy); color: var(--white);
+      border: none; padding: 13px 40px;
+      font-family: var(--font-sans); font-size: 12px;
+      font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      cursor: pointer; transition: background .2s;
+    }
+    .btn-buscar:hover { background: #1a2f4a; }
+
+    /* STRIP */
+    .strip {
+      background: var(--white);
+      padding: 56px 60px;
+      border-bottom: 1px solid var(--border);
+    }
+    .strip-inner {
+      max-width: 1140px; margin: 0 auto;
+      display: flex; align-items: center; gap: 80px;
+    }
+    .strip-text { flex: 1.2; }
+    .strip-title {
+      font-size: clamp(20px, 2.2vw, 28px);
+      font-weight: 800; color: var(--text); line-height: 1.25; margin-bottom: 10px;
+    }
+    .strip-desc {
+      font-size: 13px; color: var(--gray); line-height: 1.75;
+    }
+    .strip-features { display: flex; gap: 44px; }
+    .sf { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; }
+    .sf-icon {
+      width: 54px; height: 54px; border-radius: 50%;
+      border: 1.5px solid var(--border); background: var(--offwhite);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .sf-icon svg { color: var(--navy); }
+    .sf-name { font-size: 11px; font-weight: 700; color: var(--text); max-width: 90px; line-height: 1.4; }
+
+    /* SECTION HEADER */
+    .sh { text-align: center; margin-bottom: 40px; }
+    .sh h2 {
+      font-size: clamp(24px, 2.8vw, 36px);
+      font-weight: 800; color: var(--text); letter-spacing: -.5px;
+    }
+    .sh p { font-size: 13px; color: var(--gray); margin-top: 6px; }
+
+    /* ROOMS */
+    .rooms { background: var(--offwhite); padding: 68px 60px 80px; }
+    .rooms-grid {
+      max-width: 1140px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 20px;
+    }
+    .rc {
+      background: var(--white); border: 1px solid var(--border); overflow: hidden;
+      transition: box-shadow .3s, transform .3s;
+    }
+    .rc:hover { box-shadow: 0 14px 40px rgba(0,0,0,.1); transform: translateY(-4px); }
+    .rc-img { position: relative; aspect-ratio: 16/10; overflow: hidden; }
+    .rc-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s; }
+    .rc:hover .rc-img img { transform: scale(1.05); }
+    .badge-avail {
+      position: absolute; bottom: 10px; left: 10px;
+      background: var(--red); color: white;
+      font-size: 9px; font-weight: 700; letter-spacing: .5px;
+      text-transform: uppercase; padding: 5px 10px;
+    }
+    .badge-info {
+      position: absolute; top: 10px; right: 10px;
+      background: var(--navy); color: rgba(255,255,255,.9);
+      font-size: 9px; font-weight: 600; padding: 4px 9px;
+    }
+    .rc-body { padding: 18px 20px 20px; }
+    .rc-name {
+      font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 12px;
+    }
+    .rc-tags { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 16px; }
+    .rc-tag {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 10px; font-weight: 600; color: var(--gray); letter-spacing: .3px;
+    }
+    .rc-tag svg { opacity: .5; color: var(--navy); }
+    .rc-foot {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 14px; border-top: 1px solid var(--border);
+    }
+    .rc-price-num {
+      font-size: 18px; font-weight: 800; color: var(--gold); line-height: 1;
+    }
+    .rc-price-per { font-size: 10px; color: var(--gray); margin-top: 2px; }
+    .btn-reservar {
+      background: var(--gold); color: var(--navy);
+      border: none; padding: 10px 20px;
+      font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      cursor: pointer; transition: background .2s; text-decoration: none; display: inline-block;
+    }
+    .btn-reservar:hover { background: var(--gold2); }
+
+    /* GASTRO */
+    .gastro { background: var(--white); padding: 68px 60px 76px; }
+    .gastro-inner { max-width: 1140px; margin: 0 auto; }
+    .gastro-top {
+      display: grid; grid-template-columns: 1.5fr 1fr; gap: 24px; margin-bottom: 24px;
+    }
+    .gastro-card {
+      display: flex; border: 1px solid var(--border); overflow: hidden;
+    }
+    .gastro-img {
+      width: 190px; flex-shrink: 0; object-fit: cover; display: block;
+    }
+    .gastro-info { padding: 22px; display: flex; flex-direction: column; }
+    .gastro-name { font-size: 18px; font-weight: 800; color: var(--text); margin-bottom: 10px; }
+    .gastro-desc {
+      font-size: 12px; color: var(--gray); line-height: 1.7; flex: 1; margin-bottom: 16px;
+    }
+    .btn-mas {
+      align-self: flex-start; background: var(--navy); color: var(--white);
+      border: none; padding: 9px 20px;
+      font-size: 11px; font-weight: 600; letter-spacing: 1px; cursor: pointer; transition: background .2s;
+    }
+    .btn-mas:hover { background: #1a2f4a; }
+    .gastro-side { display: flex; flex-direction: column; gap: 16px; }
+    .gastro-hours {
+      border: 1px solid var(--border); padding: 20px;
+      font-size: 13px; color: var(--gray); line-height: 1.75;
+    }
+    .gastro-hours strong { display: block; font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .gastro-quote {
+      background: var(--navy); padding: 20px;
+      font-family: var(--font-serif); font-style: italic;
+      font-size: 15px; color: rgba(255,255,255,.78); line-height: 1.6; flex: 1;
+    }
+    .amenity-grid {
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 16px;
+    }
+    .amenity-item {
+      border: 1px solid var(--border); padding: 20px 14px; text-align: center;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .amenity-item:hover { border-color: var(--gold); box-shadow: 0 4px 14px rgba(212,168,67,.1); }
+    .amenity-icon {
+      width: 44px; height: 44px; margin: 0 auto 10px;
+      border: 1.5px solid var(--border); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--offwhite);
+    }
+    .amenity-icon svg { color: var(--navy); }
+    .amenity-name { font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 5px; }
+    .amenity-desc { font-size: 11px; color: var(--gray); line-height: 1.55; }
+
+    /* TESTI + MAP */
+    .testi-sec { background: var(--offwhite); padding: 68px 60px 76px; }
+    .testi-inner {
+      max-width: 1140px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+    }
+    .testi-left .sh { text-align: left; margin-bottom: 24px; }
+    .testi-card {
+      background: var(--white); border: 1px solid var(--border); padding: 26px;
+    }
+    .testi-stars { display: flex; gap: 3px; margin-bottom: 14px; }
+    .testi-stars svg { color: var(--gold); }
+    .testi-text {
+      font-size: 13px; color: var(--gray); line-height: 1.8;
+      font-style: italic; margin-bottom: 20px;
+    }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      object-fit: cover; border: 2px solid var(--gold);
+    }
+    .testi-name { font-size: 13px; font-weight: 700; color: var(--text); }
+    .testi-loc { font-size: 11px; color: var(--gray); }
+    .map-wrap { aspect-ratio: 4/3; overflow: hidden; border: 1px solid var(--border); }
+    .map-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
+    .map-address { margin-top: 14px; font-size: 12px; color: var(--gray); line-height: 1.65; }
+    .map-address strong { color: var(--text); font-weight: 600; }
+
+    /* FOOTER */
+    footer { background: var(--navy); padding: 60px 60px 32px; color: rgba(255,255,255,.55); }
+    .footer-inner { max-width: 1140px; margin: 0 auto; }
+    .footer-top {
+      display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 48px;
+      padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.07); margin-bottom: 28px;
+    }
+    .footer-tagline {
+      font-family: var(--font-serif); font-style: italic;
+      font-size: 13px; color: rgba(255,255,255,.4);
+      line-height: 1.65; margin: 14px 0 18px;
+    }
+    .footer-contact { display: flex; flex-direction: column; gap: 6px; }
+    .footer-contact a {
+      font-size: 12px; color: rgba(255,255,255,.5); text-decoration: none; transition: color .2s;
+    }
+    .footer-contact a:hover { color: var(--gold); }
+    .footer-col h4 {
+      font-size: 10px; font-weight: 700; letter-spacing: 2px;
+      color: var(--gold); text-transform: uppercase; margin-bottom: 18px;
+    }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .footer-links a {
+      font-size: 12px; color: rgba(255,255,255,.5); text-decoration: none; transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center; font-size: 11px;
+    }
+    .wa-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #25d366; color: white; padding: 10px 18px;
+      text-decoration: none; font-size: 12px; font-weight: 600;
+      transition: background .2s; margin-top: 18px;
+    }
+    .wa-btn:hover { background: #1fba58; }
+    .footer-nav-links { display: flex; gap: 24px; }
+    .footer-nav-links a { font-size: 11px; color: rgba(255,255,255,.35); text-decoration: none; }
+    .footer-nav-links a:hover { color: rgba(255,255,255,.7); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      nav, .strip, .rooms, .gastro, .testi-sec, footer { padding-left: 24px; padding-right: 24px; }
+      .booking-wrap { padding: 0 24px; }
+      .hero-content { padding: 160px 24px 260px; }
+    }
+    @media (max-width: 768px) {
+      .nav-menu { display: none; }
+      .hero h1 { font-size: 32px; letter-spacing: -1px; }
+      .booking-fields { grid-template-columns: 1fr 1fr; }
+      .rooms-grid { grid-template-columns: 1fr; }
+      .gastro-top { grid-template-columns: 1fr; }
+      .amenity-grid { grid-template-columns: 1fr 1fr; }
+      .testi-inner { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .strip-inner { flex-direction: column; gap: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="logo">
+    <div class="logo-icon">
+      <span class="logo-icon-top">ALCÁZAR</span>
+      <div class="logo-icon-line"></div>
+      <span class="logo-icon-top">LUNA</span>
+    </div>
+    <div class="logo-text">
+      <span class="logo-name">ALCÁZAR<br/>LUNA</span>
+    </div>
+  </a>
+  <ul class="nav-menu">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#habitaciones">Habitaciones</a></li>
+    <li><a href="#gastronomia">Gastronomía</a></li>
+    <li><a href="#experiencias">Experiencias</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="#reservar" class="nav-cta">Reservar Ahora</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-quote">Tus sueños comienzan aquí</p>
+    <h1>Donde el confort moderno<br/>encuentra el descanso<br/>absoluto</h1>
+    <p class="hero-desc">
+      Donde el confort moderno encuentra el <strong>descanso absoluto</strong>, creando experiencias para nuestros huéspedes.
+    </p>
+  </div>
+
+  <!-- BOOKING -->
+  <div class="booking-wrap" id="reservar">
+    <div class="booking-card">
+      <div class="booking-fields">
+        <div class="bf">
+          <div class="bf-top">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            <span class="bf-label">Entrada</span>
+          </div>
+          <input type="text" placeholder="DD / MM / AAAA" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'"/>
+        </div>
+        <div class="bf">
+          <div class="bf-top">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            <span class="bf-label">Salida</span>
+          </div>
+          <input type="text" placeholder="DD / MM / AAAA" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'"/>
+        </div>
+        <div class="bf">
+          <div class="bf-top">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            <span class="bf-label">Huéspedes</span>
+          </div>
+          <select>
+            <option>1 Adulto</option>
+            <option selected>2 Adultos</option>
+            <option>2 Adultos + 1 Niño</option>
+            <option>3 Adultos</option>
+          </select>
+        </div>
+        <div class="bf">
+          <div class="bf-top">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+            <span class="bf-label">Habitación</span>
+          </div>
+          <select>
+            <option>Estándar con Balcón</option>
+            <option>Estándar con King</option>
+            <option>Suite Junior</option>
+            <option>Suite Luna</option>
+          </select>
+        </div>
+      </div>
+      <div class="booking-bottom">
+        <span class="booking-guarantee">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20,6 9,17 4,12"/></svg>
+          Mejor Precio Web Garantizado
+        </span>
+        <button class="btn-buscar">Buscar Tarifas</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<section class="strip" id="nosotros">
+  <div class="strip-inner">
+    <div class="strip-text">
+      <h2 class="strip-title">Un oasis de calidez humana y servicio excepcional</h2>
+      <p class="strip-desc">En Alcázar de Luna nos dedicamos a ambientar la hospitalidad humana — nuestro servicio es una economía huésped que pone cada detalle a tu disposición.</p>
+    </div>
+    <div class="strip-features">
+      <div class="sf">
+        <div class="sf-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+        </div>
+        <span class="sf-name">Check-in Exprés</span>
+      </div>
+      <div class="sf">
+        <div class="sf-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <span class="sf-name">Estacionamiento Gratis con elevador para autos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HABITACIONES -->
+<section class="rooms" id="habitaciones">
+  <div style="max-width:1140px;margin:0 auto;">
+    <div class="sh">
+      <h2>Habitaciones &amp; Suites Exclusivas</h2>
+    </div>
+    <div class="rooms-grid">
+
+      <div class="rc">
+        <div class="rc-img">
+          <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=700&q=85&fit=crop" alt="Estándar con Balcón"/>
+          <span class="badge-avail">¡Última Disponible!</span>
+        </div>
+        <div class="rc-body">
+          <h3 class="rc-name">Estándar con Balcón</h3>
+          <div class="rc-tags">
+            <span class="rc-tag">
+              <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0114.08 0M1.42 9a16 16 0 0121.16 0M8.53 16.11a6 6 0 016.95 0M12 20h.01"/></svg>
+              Wifi
+            </span>
+            <span class="rc-tag">
+              <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              Blackout
+            </span>
+            <span class="rc-tag">
+              <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v5M8.5 5.5L10 7M15.5 5.5L14 7M4 10h16M6 10v8M18 10v8"/></svg>
+              Regadera Lluvia
+            </span>
+          </div>
+          <div class="rc-foot">
+            <div>
+              <div class="rc-price-num">$120 USD</div>
+              <div class="rc-price-per">/ noche</div>
+            </div>
+            <a href="#reservar" class="btn-reservar">Reservar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="rc">
+        <div class="rc-img">
+          <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=700&q=85&fit=crop" alt="Estándar con King"/>
+          <span class="badge-info">Regulan Luvia</span>
+        </div>
+        <div class="rc-body">
+          <h3 class="rc-name">Estándar con King</h3>
+          <div class="rc-tags">
+            <span class="rc-tag">
+              <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0114.08 0M1.42 9a16 16 0 0121.16 0M8.53 16.11a6 6 0 016.95 0M12 20h.01"/></svg>
+              Wifi
+            </span>
+            <span class="rc-tag">
+              <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              Blackout
+            </span>
+            <span class="rc-tag">
+              <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v5M8.5 5.5L10 7M15.5 5.5L14 7M4 10h16M6 10v8M18 10v8"/></svg>
+              Regadera Lluvia
+            </span>
+          </div>
+          <div class="rc-foot">
+            <div>
+              <div class="rc-price-num">$120 USD</div>
+              <div class="rc-price-per">/ noche</div>
+            </div>
+            <a href="#reservar" class="btn-reservar">Reservar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="rc">
+        <div class="rc-img">
+          <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?w=700&q=85&fit=crop" alt="Habitactor King"/>
+          <span class="badge-info">Regulan Khiva</span>
+        </div>
+        <div class="rc-body">
+          <h3 class="rc-name">Habitactor King</h3>
+          <div class="rc-tags">
+            <span class="rc-tag">
+              <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0114.08 0M1.42 9a16 16 0 0121.16 0M8.53 16.11a6 6 0 016.95 0M12 20h.01"/></svg>
+              Wifi
+            </span>
+            <span class="rc-tag">
+              <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              Blackout
+            </span>
+            <span class="rc-tag">
+              <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v5M8.5 5.5L10 7M15.5 5.5L14 7M4 10h16M6 10v8M18 10v8"/></svg>
+              Regadera Lluvia
+            </span>
+          </div>
+          <div class="rc-foot">
+            <div>
+              <div class="rc-price-num">$120 USD</div>
+              <div class="rc-price-per">/ noche</div>
+            </div>
+            <a href="#reservar" class="btn-reservar">Reservar</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GASTRO & AMENITIES -->
+<section class="gastro" id="gastronomia">
+  <div class="gastro-inner">
+    <div class="sh"><h2>Gastronomía &amp; Amenities</h2></div>
+    <div class="gastro-top">
+      <div class="gastro-card">
+        <img class="gastro-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=85&fit=crop" alt="Restaurante Naolí"/>
+        <div class="gastro-info">
+          <h3 class="gastro-name">Restaurante Naolí</h3>
+          <p class="gastro-desc">DINEnaol Alcázar de Luna el restaurante donde puede descansar con sentidos. Cuando la rica gastronomía guerrerense se une con la cocina moderna con ingredientes de temporada y preparación artesanal de los mejores ingredientes y deliciosos.</p>
+          <button class="btn-mas">Más Reservada</button>
+        </div>
+      </div>
+      <div class="gastro-side">
+        <div class="gastro-hours">
+          <strong>Horario del Restaurante</strong>
+          Desayuno: 7:00 – 10:30 hrs<br/>
+          Comida: 13:00 – 16:00 hrs<br/>
+          Cena: 19:00 – 22:00 hrs
+        </div>
+        <div class="gastro-quote">
+          "Una experiencia culinaria que honra los sabores auténticos de Guerrero con ingredientes frescos de temporada."
+        </div>
+      </div>
+    </div>
+
+    <div class="amenity-grid">
+      <div class="amenity-item">
+        <div class="amenity-icon">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M2 12h20M2 12a10 10 0 0020 0M2 12a10 10 0 0120 0M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <div class="amenity-name">Alberca</div>
+        <div class="amenity-desc">Disfruta de nuestra alberca que adecuada que ofrece una temporada relajante hasta la hora de la puesta de sol.</div>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="amenity-name">Canchas Deportivas</div>
+        <div class="amenity-desc">Nuestras instalaciones deportivas cuentan con canchas que favorecen pocas posibilidades.</div>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="amenity-name">Salón de Eventos</div>
+        <div class="amenity-desc">Nuestro evento salón que va hasta la fecha. También puede hacer diferentes ocasiones y memoriales.</div>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div class="amenity-name">Elevador de Autos</div>
+        <div class="amenity-desc">Estacionamiento que se conoce con las autos con el elevador asignado de sus autos.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS + MAPA -->
+<section class="testi-sec" id="contacto">
+  <div class="testi-inner">
+    <div class="testi-left">
+      <div class="sh" style="text-align:left;"><h2>Testimonials</h2></div>
+      <div class="testi-card">
+        <div class="testi-stars">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testi-text">"En Alcázar de Luna encontraré adelantos adecuados que es más. Ya tiene todo el lujo se extiende un excepcional, en eventos su exterior con sentimientos con cada talento utilizar sus instalaciones para mejor."</p>
+        <div class="testi-author">
+          <img class="testi-avatar" src="https://i.pravatar.cc/80?img=47" alt="Joseline Alejandro"/>
+          <div>
+            <div class="testi-name">Joseline Alejandro</div>
+            <div class="testi-loc">Reseñas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="map-wrap">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60419.47!2d-99.503!3d17.553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce3adde51ccd3b%3A0xd89a3f5ffc6a5d9!2sChilpancingo+de+los+Bravo%2C+Gro.!5e0!3m2!1ses!2smx!4v1700000000000"
+          allowfullscreen loading="lazy" title="Mapa Hotel">
+        </iframe>
+      </div>
+      <p class="map-address">
+        <strong>Dirección:</strong> Carretera Cuernavaca-Chilpancingo km 220+681.80,<br/>
+        Col. Ixquiapa, Chilpancingo de Bravo, Guerrero, 39016<br/><br/>
+        <strong>Tel:</strong> (52) 747 105 6008 &nbsp;|&nbsp;
+        <strong>Email:</strong> gerencia@hotelalcazardeluna.com
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="#" class="logo" style="text-decoration:none;margin-bottom:0;">
+          <div class="logo-icon">
+            <span class="logo-icon-top">ALCÁZAR</span>
+            <div class="logo-icon-line"></div>
+            <span class="logo-icon-top">LUNA</span>
+          </div>
+          <div class="logo-text">
+            <span class="logo-name">ALCÁZAR<br/>LUNA</span>
+          </div>
+        </a>
+        <p class="footer-tagline">"Donde la comodidad brilla<br/>y cada estancia se recuerda."</p>
+        <div class="footer-contact">
+          <a href="tel:+527471056008">Tel: (52) 747 105 6008</a>
+          <a href="mailto:gerencia@hotelalcazardeluna.com">gerencia@hotelalcazardeluna.com</a>
+          <a href="#">Dirección: Hotel Alcázar de Luna</a>
+        </div>
+        <a href="https://wa.me/527471056008" class="wa-btn">
+          <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Directo
+        </a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Hotel</h4>
+        <ul class="footer-links">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Galería</a></li>
+          <li><a href="#">Atracciones</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Nosotros</h4>
+        <ul class="footer-links">
+          <li><a href="#">Quiénes Somos</a></li>
+          <li><a href="#">Misión</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Suscríbete</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul class="footer-links">
+          <li><a href="tel:+527471056008">Tel: (52) 747 105 6008</a></li>
+          <li><a href="mailto:gerencia@hotelalcazardeluna.com">Email: info@hotelalcazardeluna.com</a></li>
+          <li><a href="#">Dirección Hotel Alcázar de Luna</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2025 Hotel Alcázar de Luna · Todos los derechos reservados</span>
+      <div class="footer-nav-links">
+        <a href="#">Hotel</a>
+        <a href="#">Mapa</a>
+        <a href="#">Legal</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('solid', window.scrollY > 40);
+  });
+</script>
+</body>
+</html>
