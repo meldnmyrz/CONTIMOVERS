@@ -481,6 +481,95 @@
 }
 .checkbox-label span { font-size: .85rem; color: var(--gray); line-height: 1.5; }
 .checkbox-label a { color: var(--emerald); }
+
+/* ── Formulario simplificado con floating labels ── */
+.contact-form--simple { gap: 18px; }
+
+.form-group--floating {
+  position: relative;
+  display: block;
+}
+.form-group--floating input,
+.form-group--floating textarea {
+  width: 100%;
+  padding: 22px 48px 10px 20px;
+  font-size: .95rem;
+  font-family: 'Inter', sans-serif;
+  color: var(--ink);
+  background: #F8FAFB;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 12px;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+  resize: none;
+}
+.form-group--floating textarea {
+  min-height: 130px;
+  padding-top: 26px;
+}
+.form-group--floating input:focus,
+.form-group--floating textarea:focus {
+  border-color: var(--emerald);
+  box-shadow: 0 0 0 3px rgba(0,168,107,.10);
+  background: var(--white);
+}
+/* Label flotante */
+.form-group--floating label {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: .95rem;
+  font-weight: 400;
+  color: var(--gray);
+  pointer-events: none;
+  transition: top .2s ease, font-size .2s ease, color .2s ease, font-weight .2s ease;
+  white-space: nowrap;
+}
+.form-group--textarea label {
+  top: 22px;
+  transform: none;
+}
+/* Sube el label cuando hay contenido o focus */
+.form-group--floating input:focus ~ label,
+.form-group--floating input:not(:placeholder-shown) ~ label,
+.form-group--floating textarea:focus ~ label,
+.form-group--floating textarea:not(:placeholder-shown) ~ label {
+  top: 10px;
+  transform: none;
+  font-size: .72rem;
+  font-weight: 600;
+  color: var(--emerald);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.form-group--textarea input:focus ~ label,
+.form-group--textarea input:not(:placeholder-shown) ~ label,
+.form-group--textarea textarea:focus ~ label,
+.form-group--textarea textarea:not(:placeholder-shown) ~ label {
+  top: 8px;
+}
+/* Ícono */
+.form-group__icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #C0CBD8;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  transition: color var(--transition);
+}
+.form-group__icon--textarea {
+  top: 22px;
+  transform: none;
+}
+.form-group--floating input:focus ~ .form-group__icon,
+.form-group--floating textarea:focus ~ .form-group__icon { color: var(--emerald); }
+/* Línea de acento al focus */
+.form-group--floating input:focus,
+.form-group--floating textarea:focus { border-color: var(--emerald); }
 .btn--full { width: 100%; justify-content: center; }
 .form-note {
   display: flex;
