@@ -107,6 +107,8 @@ ul { list-style: none; }
   border-radius: var(--radius);
   border: 2px solid transparent;
   cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
   transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition), border-color var(--transition);
   white-space: nowrap;
 }
