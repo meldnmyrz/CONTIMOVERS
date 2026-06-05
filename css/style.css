@@ -530,9 +530,12 @@ ul { list-style: none; }
   opacity: 0;
   will-change: opacity, transform;
   justify-content: center;
-  padding-top: 88px; /* compensa navbar fija para centrar en área visible */
+  padding-top: 120px;
 }
-#heroSlide1 { will-change: transform; }
+#heroSlide1 {
+  will-change: transform;
+  padding-top: 80px;
+}
 
 /* Título slide 2 */
 #heroSlide2 .hero-slide__title {
