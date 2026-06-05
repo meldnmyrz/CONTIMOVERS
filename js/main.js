@@ -1,14 +1,11 @@
 /* ContiMovers — main.js */
 
-// --- Navbar scroll behavior ---
-const navbar = document.getElementById('navbar');
+// --- Navbar scroll behavior + burger menu ---
+const navbar  = document.getElementById('navbar');
+const burger  = document.getElementById('burger');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 40);
 }, { passive: true });
-
-// --- Mobile burger menu ---
-const navbar  = document.getElementById('navbar');
-const burger  = document.getElementById('burger');
 const navMenu = document.getElementById('navMenu');
 
 function closeMenu() {
