@@ -776,8 +776,9 @@ ul { list-style: none; }
   box-shadow: 0 20px 52px rgba(0,0,0,.11);
   border-color: rgba(0,168,107,.3);
 }
-/* número decorativo de fondo */
+/* número decorativo de fondo — oculto */
 .service-card__num {
+  display: none;
   position: absolute;
   top: 16px;
   right: 20px;
