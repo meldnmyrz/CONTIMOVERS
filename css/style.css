@@ -530,7 +530,8 @@ ul { list-style: none; }
   opacity: 0;
   will-change: opacity, transform;
   justify-content: center;
-  padding-top: 120px;
+  padding-top: 160px;
+  padding-bottom: 40px;
 }
 #heroSlide1 {
   will-change: transform;
@@ -539,19 +540,19 @@ ul { list-style: none; }
 
 /* Título slide 2 */
 #heroSlide2 .hero-slide__title {
-  font-size: clamp(2.2rem, 4vw, 3.6rem);
-  margin-bottom: 16px;
+  font-size: clamp(3.2rem, 6vw, 5.5rem);
+  margin-bottom: 20px;
   white-space: nowrap;
 }
 
 /* Logo en slide 2 */
 #heroSlide2 .hero-brand-logo {
-  width: 200px;
-  margin-top: 20px;
+  width: 220px;
+  margin-top: 24px;
 }
 
 @media (max-width: 1024px) {
-  #heroSlide2 .hero-slide__title { font-size: clamp(2rem, 4.5vw, 3rem); white-space: normal; }
+  #heroSlide2 .hero-slide__title { font-size: clamp(2.8rem, 5.5vw, 4rem); white-space: normal; }
 }
 
 @media (max-width: 768px) {
