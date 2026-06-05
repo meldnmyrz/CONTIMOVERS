@@ -357,6 +357,18 @@ ul { list-style: none; }
   );
 }
 
+/* Degradado azul marino más fuerte en móvil para legibilidad del texto */
+@media (max-width: 768px) {
+  #heroSlide2 .hero-slide__overlay--dark {
+    background: linear-gradient(
+      180deg,
+      rgba(10,31,58,.85) 0%,
+      rgba(13,59,124,.55) 40%,
+      rgba(10,31,58,.90) 100%
+    );
+  }
+}
+
 /* --- Contenido central --- */
 .hero-slide__content {
   position: relative;
