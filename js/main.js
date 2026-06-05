@@ -143,25 +143,24 @@ document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(
 
       /* ─── SLIDE 1 ─── */
       const kbP   = ease(clamp01(raw / 0.85));
-      const fadeP = ease(clamp01((raw - 0.45) / 0.35));
+      const fadeP = ease(clamp01((raw - 0.40) / 0.30));  // fade más rápido
 
-      // Ken Burns solo en desktop (muy pesado en móvil)
-      if (!mobile && img1) img1.style.transform = `scale(${1 + kbP * 0.14})`;
+      if (!mobile && img1) img1.style.transform = `scale(${1 + kbP * 0.10})`;
       if (c1) {
         c1.style.opacity   = `${1 - fadeP}`;
-        c1.style.transform = `translateY(${-fadeP * 20}px)`;
+        c1.style.transform = `translateY(${-fadeP * 24}px)`;
       }
 
       /* ─── SLIDE 2 ─── */
-      const p2  = ease(clamp01((raw - 0.35) / 0.55));
-      const tp2 = ease(clamp01((raw - 0.58) / 0.42));
+      // Aparece más temprano y el contenido entra con retraso mínimo → más fluido
+      const p2  = ease(clamp01((raw - 0.30) / 0.45));   // imagen aparece antes
+      const tp2 = ease(clamp01((raw - 0.48) / 0.35));   // texto entra más rápido
 
       slide2.style.opacity = `${p2}`;
-      // Zoom inverso solo en desktop
-      if (!mobile && img2) img2.style.transform = `scale(${1.1 - p2 * 0.1})`;
+      if (!mobile && img2) img2.style.transform = `scale(${1.08 - p2 * 0.08})`;
       if (c2) {
         c2.style.opacity   = `${tp2}`;
-        c2.style.transform = `translateY(${(1 - tp2) * 20}px)`;
+        c2.style.transform = `translateY(${(1 - tp2) * 28}px)`;
       }
 
       // Dots

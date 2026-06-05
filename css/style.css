@@ -555,36 +555,75 @@ ul { list-style: none; }
   opacity: 0;
   will-change: opacity, transform;
   justify-content: center;
-  padding-top: 160px;
-  padding-bottom: 40px;
+  padding-top: 100px;
 }
 #heroSlide1 {
   will-change: transform;
   padding-top: 80px;
 }
 
+/* Eyebrow — credenciales en línea fina */
+.hero-slide__eyebrow {
+  display: block;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  margin-bottom: 18px;
+  opacity: .9;
+}
+
 /* Título slide 2 */
 #heroSlide2 .hero-slide__title {
-  font-size: clamp(3.2rem, 6vw, 5.5rem);
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  line-height: 1.08;
   margin-bottom: 20px;
-  white-space: nowrap;
 }
 
-/* Logo en slide 2 */
-#heroSlide2 .hero-brand-logo {
-  width: 220px;
-  margin-top: 24px;
+/* Stats inline dentro del slide 2 */
+.hero-slide2__stats {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  margin-top: 40px;
+  justify-content: center;
 }
-
-@media (max-width: 1024px) {
-  #heroSlide2 .hero-slide__title { font-size: clamp(2.8rem, 5.5vw, 4rem); white-space: normal; }
+.hero-slide2__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.hero-slide2__num {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1;
+}
+.hero-slide2__label {
+  font-size: .7rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.55);
+}
+.hero-slide2__divider {
+  width: 1px;
+  height: 48px;
+  background: rgba(255,255,255,.2);
+  flex-shrink: 0;
 }
 
 @media (max-width: 768px) {
   #heroSlide2 { justify-content: flex-end; padding-top: 0; }
-  #heroSlide2 .hero-slide__content { padding-bottom: 10vh; }
-  #heroSlide2 .hero-slide__title { font-size: clamp(2rem, 8vw, 3rem); white-space: normal; }
-  #heroSlide2 .hero-brand-logo { width: 160px; margin-top: 16px; }
+  #heroSlide2 .hero-slide__content { padding-bottom: 8vh; }
+  #heroSlide2 .hero-slide__title { font-size: clamp(2rem, 8vw, 2.8rem); }
+  .hero-slide2__stats { gap: 20px; margin-top: 24px; }
+  .hero-slide2__num { font-size: 1.5rem; }
+  .hero-slide2__divider { height: 32px; }
+  .hero-slide__eyebrow { font-size: .68rem; margin-bottom: 12px; }
 }
 
 /* --- Scroll hint (slide 1) --- */
