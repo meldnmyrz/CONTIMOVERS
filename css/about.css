@@ -625,15 +625,45 @@
   .contact-main__grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
-  .team__grid { grid-template-columns: 1fr; }
-  .other-certs__grid { grid-template-columns: 1fr; }
-  .destinations__grid { grid-template-columns: 1fr; }
-  .destinations__grid--3 { grid-template-columns: 1fr; }
-  .dest-card--featured .dest-card__img { height: 180px; }
+  /* Nosotros */
+  .team__grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .team-card__photo { height: 180px; }
+
+  /* Certificaciones */
+  .cert-main-card { padding: 28px 20px; gap: 20px; }
+  .other-certs__grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  /* Destinos */
+  .destinations__grid { grid-template-columns: 1fr 1fr; }
+  .destinations__grid--3 { grid-template-columns: 1fr 1fr; }
+  .dest-card--featured .dest-card__img { height: 160px; }
+
+  /* Filosofía */
+  .philosophy__grid { grid-template-columns: 1fr; }
+  .philosophy-card { padding: 28px 24px; }
+
+  /* Contacto */
+  .contact-header { padding: 120px 0 56px; }
+  .contact-header__title { font-size: clamp(1.8rem, 7vw, 2.8rem); }
+  .contact-main { padding-top: 48px; }
   .form-row { flex-direction: column; }
   .contact-form-card { padding: 28px 20px; }
   .response-promise { flex-direction: column; }
-  .contact-header { padding: 130px 0 60px; }
+  .contact-info__item { padding: 14px 16px; }
+
+  /* Timeline */
+  .timeline-item { gap: 20px; }
+  .timeline-content { padding: 20px; }
+}
+
+@media (max-width: 480px) {
+  .team__grid { grid-template-columns: 1fr; }
+  .other-certs__grid { grid-template-columns: 1fr; }
+  .destinations__grid,
+  .destinations__grid--3 { grid-template-columns: 1fr; }
+  .contact-form-card { padding: 20px 14px; }
+  .response-promise__num { font-size: 1.6rem; }
+  .philosophy-card { padding: 24px 18px; }
 }
 
 /* Validation error state */

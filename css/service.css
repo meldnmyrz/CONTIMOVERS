@@ -441,15 +441,43 @@
 
 /* --- RESPONSIVE MOBILE --- */
 @media (max-width: 768px) {
-  .service-hero { min-height: 85vh; }
-  .service-hero__content { padding-top: 110px; }
-  .service-hero__ctas { flex-direction: column; }
-  .service-hero__ctas .btn { justify-content: center; }
-  .coverage__grid { grid-template-columns: 1fr; }
+  .service-hero { min-height: 80vh; }
+  .service-hero__content { padding-top: 100px; padding-bottom: 56px; }
+  .service-hero__title { font-size: clamp(1.8rem, 7vw, 2.8rem); margin-bottom: 14px; }
+  .service-hero__sub { font-size: .95rem; margin-bottom: 28px; }
+  .service-hero__ctas { flex-direction: column; gap: 10px; }
+  .service-hero__ctas .btn { justify-content: center; width: 100%; max-width: 320px; }
+
+  /* Breadcrumb */
+  .breadcrumb { font-size: .75rem; }
+
+  /* Coverage */
+  .coverage__grid { grid-template-columns: 1fr 1fr; }
   .coverage__grid--5 { grid-template-columns: 1fr 1fr; }
+
+  /* Benefits */
+  .benefits__grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .benefit-card { padding: 24px 18px; }
+
+  /* Steps */
+  .svc-step { grid-template-columns: 1fr; gap: 6px; padding: 24px 0; }
+  .svc-step__num { font-size: 1.4rem; }
+
+  /* FAQ */
+  .faq-item__q { font-size: .95rem; }
+
+  /* Services overview */
+  .services-overview { padding: 56px 0 72px; }
+  .services-overview__grid { grid-template-columns: 1fr; gap: 20px; }
+  .services-overview__intro { margin-bottom: 36px; }
+}
+
+@media (max-width: 480px) {
+  .service-hero { min-height: 75vh; }
+  .service-hero__content { padding-top: 90px; }
+  .coverage__grid,
+  .coverage__grid--5 { grid-template-columns: 1fr; }
   .benefits__grid { grid-template-columns: 1fr; }
-  .svc-step { grid-template-columns: 1fr; gap: 8px; }
-  .svc-step__num { font-size: 1.6rem; }
-  .services-overview__grid { grid-template-columns: 1fr; }
-  .services-overview { padding: 60px 0 80px; }
+  .coverage-card { padding: 24px 18px; }
+  .benefit-card { padding: 20px 16px; }
 }
