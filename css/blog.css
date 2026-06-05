@@ -400,7 +400,7 @@
   border-radius: 0 var(--radius) var(--radius) 0;
 }
 .article-body blockquote p {
-  font-family: 'DM Serif Display', serif;
+  font-family: 'Libre Franklin', serif;
   font-style: italic;
   font-size: 1.15rem;
   color: var(--forest);
