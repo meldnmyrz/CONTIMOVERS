@@ -62,10 +62,11 @@ ul { list-style: none; }
   letter-spacing: -.02em;
 }
 .section-title em {
-  font-family: 'Fraunces', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--forest);
+  letter-spacing: .01em;
 }
 .section-tag {
   display: inline-block;
@@ -464,9 +465,10 @@ ul { list-style: none; }
   text-shadow: 0 4px 28px rgba(0,0,0,.5);
 }
 .hero-slide__accent {
-  font-family: 'Fraunces', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: .01em;
   color: var(--emerald);
 }
 .hero-slide__sub {
@@ -969,7 +971,7 @@ ul { list-style: none; }
 .testimonial-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 .testimonial-card__stars { color: #F59E0B; font-size: 1.1rem; letter-spacing: 2px; }
 .testimonial-card blockquote {
-  font-family: 'Fraunces', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: 1.05rem;
   color: var(--ink);
@@ -1082,7 +1084,7 @@ ul { list-style: none; }
   margin: 12px 0 20px;
 }
 .cta-banner__title em {
-  font-family: 'Fraunces', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   color: var(--emerald);
 }
