@@ -96,6 +96,31 @@ ul { list-style: none; }
 /* --- SECTIONS --- */
 .section { padding: 120px 0; }
 .section--canvas { background: var(--canvas); }
+.section--navy  { background: var(--navy-dark); }
+
+/* Textos claros cuando la sección es navy */
+.section--navy .section-title     { color: var(--white); }
+.section--navy .section-title em  { color: var(--emerald); }
+.section--navy .section-subtitle  { color: rgba(255,255,255,.65); }
+.section--navy .section-tag       { color: var(--emerald); }
+
+/* Tarjetas de servicio sobre fondo navy */
+.section--navy .service-card {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.08);
+  color: var(--white);
+}
+.section--navy .service-card:hover {
+  background: rgba(255,255,255,.10);
+  border-color: var(--emerald);
+}
+.section--navy .service-card h3  { color: var(--white); }
+.section--navy .service-card p   { color: rgba(255,255,255,.65); }
+.section--navy .service-card__num { color: rgba(255,255,255,.12); }
+.section--navy .service-card__icon { background: rgba(0,168,107,.15); color: var(--emerald); }
+.section--navy .service-card__link { color: var(--emerald); }
+.section--navy .service-card__bar  { background: var(--emerald); }
+/* Badge "más solicitado" ya es verde, se mantiene */
 
 /* --- BUTTONS --- */
 .btn {
